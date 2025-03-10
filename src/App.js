@@ -1,23 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Signup from './Signup/signup';
+import Login from './Login/login';
+import Dashboard from './Dashboard';
+// import LoginForm from './LoginForm';
+
+
+
+
+
+
+
+
+
+
+//preotected route component
+const ProtectedRoute = ({children }) => {
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  if (!isAuthenticated) {
+    window.location.href ="http://localhost:3000/login";
+    return null;
+  }
+
+  return children;
+};
 
 function App() {
+
+  useEffect(() => {
+    
+    const healthCheck = () => {
+      if (window.location.pathname === '/health') {
+        document.body.textContent = 'OK';
+      }
+    };
+    healthCheck();
+    // Check if user is authenticated when dashboard loads
+    const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+    if (!isAuthenticated && window.location.pathname !== '/health') {
+      window.location.href = 'http://localhost:3000/login';
+    }
+}, []);
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+       <Router>
+      <Routes>
+      <Route path="/" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/login/dashboard" element={<Dashboard />} />
+
+      <Route path="/dashboard/" element={<Dashboard />} />
+      {/* <Route path="/dashboard/*" element={<Dashboard />} />  */}
+      <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+
+      </Routes>
+    </Router>
+
     </div>
   );
 }
