@@ -23,8 +23,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.10.1",
     "react-select-country-list": "^2.2.3",
-    "web-vitals": "^4.2.4",
-    "proxy": "https://xchange.booknest.com.ng"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
