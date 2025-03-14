@@ -1,0 +1,63 @@
+*{
+    /* background-color: #e4e9ef; */
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    /* background-color: #e5f2ff; */
+
+} 
+.container-fluid {
+    position: relative;
+    /* width: 850px; */
+    height: 100vh;
+    background-color: #e5f2ff !important;
+}
+
+.left {
+    background-color: #005eff;
+    height: 550px !important;
+}
+
+.left h3 {
+    display: grid;
+    place-content: center;
+    color: #fff;
+    padding: 40px;
+    font-size: 55px !important;
+    font-weight: 700;
+    background-color: transparent !important;
+    overflow-x: hidden !important;
+}
+
+.phorm-box-beeg form {
+    overflow-x: hidden !important;
+}
+
+form{
+    margin-top: 10px !important;
+}
+
+input:focus {
+    outline: #005eff !important;
+    box-shadow: none !important;
+    border: 2px solid #005eff;
+}
+select:focus {
+    outline: #005eff !important;
+    box-shadow: none !important;
+    border: 2px solid #005eff;
+}
+
+.checks {
+    margin-top: 20px;
+}
+
+.form-check {
+    margin-top: -4px !important;
+}
+
+.IAgree {
+    margin-top: 4px !important;
+    margin-left: 10px !important;
+}
