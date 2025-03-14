@@ -6,10 +6,10 @@ import { faShoppingCart, faDollarSign, faUsers, faBars } from '@fortawesome/free
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import Sidebar from './dashboard/components/Sidebar';
-import StatCard from './dashboard/components/StatCard';
-import ReportChart from './dashboard/components/ReportChart';
-import RecentActivity from './dashboard/components/RecentActivity';
+import Sidebar from './Dashboard/components/Sidebar';
+import StatCard from './Dashboard/components/StatCard';
+import ReportChart from './Dashboard/components/ReportChart';
+import RecentActivity from './Dashboard/components/RecentActivity';
 
 
 
